@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You Animation</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000000;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .thank-you-message {
+            font-size: 40px;
+            font-weight: bold;
+            color: #007ced;
+            opacity: 0;
+            animation: fadeInBounce 2s ease-in-out forwards;
+            text-align: center;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color:#007ced;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background-color:  #007ced;
+        }
+
+        /* Animation */
+        @keyframes fadeInBounce {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            /* Responsive Design */
+@media (max-width: 768px) {
+    .thank-you-message {
+        font-size: 20px;
+    }
+}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="thank-you-message">
+        Thank You For Contacting Me
+    </div>
+
+    <button class="back-button" onclick="goHome()">← Home</button>
+
+    <script>
+        function goHome() {
+            window.location.href = "index.html"; // Redirect to home page
+        }
+    </script>
+
+</body>
+</html>

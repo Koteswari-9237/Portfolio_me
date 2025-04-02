@@ -1,0 +1,178 @@
+/* Reset and General Styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #edebeb;
+  font-family: Arial, sans-serif;
+}
+.page-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #007ced; /* Matching theme color */
+  text-align: center;
+  margin-bottom: 20px;
+ 
+}
+
+
+/* Wrapper for Cards */
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adds space between cards */
+  justify-content: center;
+  padding: 20px;
+  max-width: 90%;
+}
+
+/* Card Styling */
+.card {
+  width: 350px;
+  height: 460px;
+  border-radius: 15px;
+  padding: 1.5rem;
+  background: linear-gradient(45deg, #151313, #ffffff);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  transition: 0.4s ease-out;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* Prevents cutting of content */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover .info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card Image */
+.card img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+}
+
+/* Info Section */
+.info {
+  position: relative;
+  z-index: 3;
+  color: #1702fe;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.5s;
+  text-align: center;
+}
+
+.info h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.info p {
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+/* Button Styling */
+.info button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 10px;
+}
+
+.info button:hover {
+  background: linear-gradient(45deg, #007ced, #127fbe);
+  color: white;
+}
+
+/* Back Button */
+.back-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(45deg, #007ced, #127fbe);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.back-button:hover {
+  background: linear-gradient(45deg, #007ced, #127fbe);
+}
+
+/* RESPONSIVE DESIGN */
+
+/* For Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+  .wrapper {
+      gap: 15px; /* Smaller gap */
+  }
+}
+
+/* For Small Screens (Mobile Phones) */
+@media (max-width: 768px) {
+  .wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+  }
+
+  .card {
+      width: 90%; /* Make cards full width */
+  }
+
+  .back-button {
+      position: relative;
+      bottom: unset;
+      left: unset;
+      transform: none;
+      width:100px;
+  }
+}

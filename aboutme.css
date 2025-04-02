@@ -1,0 +1,107 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #edebeb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding-top: 80px;  /* Ensure the heading has space */
+}
+
+/* Center the heading */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color:#007ced;
+}
+
+/* Container for cards */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Card Styling */
+.card {
+    background: linear-gradient(45deg, #ffffff, #ffffff);
+    color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Remove default padding and margin from lists */
+.card-content ul {
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Optional: removes bullet points if not needed */
+}
+
+/* Remove extra space between list items */
+.card-content li {
+    margin: 0; /* Remove margin */
+    padding: 2px 0; /* Adjust as needed */
+    text-align: left;
+}
+
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) { 
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* Tablets: 2 columns */
+    }
+}
+
+@media (max-width: 768px) { 
+    .container {
+        grid-template-columns: 1fr; /* Mobile: 1 column */
+        gap: 15px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/* Back Button */
+.back-button {
+    margin-top: 20px;  /* More space below cards */
+    padding: 12px 25px;
+    font-size: 18px; /* Larger button */
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #007ced, #127fbe);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    background: linear-gradient(45deg, #007ced, #127fbe);
+}
+
+/* Prevent the back button from overlapping */
+@media (max-width: 500px) {
+    .back-button {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        display: block;
+        margin: 20px auto; /* Center button */
+    }
+}

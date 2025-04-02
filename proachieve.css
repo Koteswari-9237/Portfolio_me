@@ -1,0 +1,106 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #edebeb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Center content vertically */
+    align-items: center;  /* Center content horizontally */
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+h1 {
+    color: #007ced;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* Card Container */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 25px;
+    max-width: 1100px;  /* Increased max width for better layout */
+    width: 100%;
+    padding: 35px; /* More padding for spacing */
+    justify-content: center;  /* Center grid */
+}
+
+/* Card Design (Increased Size) */
+.card {
+    background: linear-gradient(45deg, #ffffff, #ffffff);
+    padding: 40px;  /* Increased padding for larger size */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    font-size: 18px; /* Increased font size */
+    min-height: 200px;  /* Set a minimum height */
+}
+
+.card h2 {
+    font-size: 24px; /* Larger heading */
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 18px; /* Larger text */
+    margin: 10px 0;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.1); /* Slightly larger on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Back Button */
+.back-button {
+    margin-top: 20px;  /* More space below cards */
+    padding: 12px 25px;
+    font-size: 18px; /* Larger button */
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #007ced, #127fbe);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    background: linear-gradient(45deg, #007ced, #127fbe);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+
+    .card {
+        padding: 40px;  /* Adjust size for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* 1 card per row */
+    }
+
+    .card {
+        padding: 35px; /* Adjust size for smaller screens */
+    }
+}
+
+/* Prevent Back Button Overlapping */
+@media (max-width: 500px) {
+    .back-button {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        display: block;
+        margin: 30px auto; /* Center button */
+    }
+}

@@ -1,0 +1,291 @@
+
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background:#000000;
+  color: #ffffff;
+  text-align: center;
+}
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: center;
+  background:#000000; /* Light background */
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Button Styling */
+nav a {
+  color: #007ced; /* Dark gray text for readability */
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px 25px;
+  border: 2px solid #ffffff; /* Light pink border */
+  border-radius: 10px;
+  background:#000000; /* Light pinkish background */
+  transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+nav a:hover {
+  background: #272727; /* Darker pink on hover */
+  border-color: #007ced; /* Hot pink border */
+  color: white; /* White text on hover */
+  box-shadow: 0px 5px 10px rgba(0, 124, 237, 0.5); /* Soft Blue Glow */
+}
+
+
+/* Main Container */
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+  margin: auto;
+  padding: 120px;
+  gap: 60px; /* Space between image and content */
+}
+
+/* Image Styling */
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  height: 320px;
+  width: 320px;
+  border-radius: 50%;
+  border: 8px solid #ffffff;
+  box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.8); /* Bright White Glow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.image:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.8); /* Bright White Glow */
+}
+
+/* Content Styling */
+.content {
+  flex: 2;
+  text-align: left;
+  padding: 20px;
+}
+
+/* Animated Text */
+.word {
+  font-size: 34px;
+  font-weight: 600;
+  min-width: 280px;
+}
+
+.word span {
+  position: relative;
+}
+
+.word span::before {
+  content: "Team Player";
+  color: #007ced;
+  animation: words 20s infinite;
+}
+
+.word span::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  background-color: #000000;;
+  width: calc(100% + 8px);
+  border-left: 2px solid #007ced;
+  right: -8px;
+  animation: cursor 0.8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+  to {
+      border-left: 2px solid #007ced;
+  }
+}
+
+@keyframes words {
+  0%, 20% { content: "Enthusiast"; }
+  21%, 40% { content: "Problem Solver"; }
+  41%, 60% { content: "Developer"; }
+  61%, 80% { content: "Designer"; }
+}
+
+@keyframes typing {
+  10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% { width: 0; }
+  5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%, 100% { width: calc(100% + 8px); }
+}
+
+/* Text Styling */
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+  font-weight: normal;
+}
+
+/* Buttons */
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;  /* Center under image & content */
+  margin-top: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 30px;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;
+  gap: 40px; /* Space between buttons */
+  width: 100%;
+  margin-top: 0; /* Space from the content */
+  position: relative;
+}
+
+/* Button Styling */
+.button {
+  background: linear-gradient(45deg, #007ced, #127fbe); /* Soft Blue Gradient */
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.button:hover {
+  background: linear-gradient(45deg, #007ced, #04486f);
+}
+@media screen and (min-width: 768px) {
+  .profile {
+      width: 50%; /* Ensure it doesn't stretch */
+  }
+
+  .buttons {
+      display: flex;
+      justify-content: center;
+  }
+}
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .image-container {
+      order: -1;
+      margin-bottom: 15px;
+  }
+
+  .image {
+      height: 250px;
+      width: 250px;
+      border-width: 6px;
+  }
+
+  .content {
+      text-align: center;
+      padding: 10px;
+  }
+
+  .word {
+      font-size: 22px;
+  }
+
+  h1 {
+      font-size: 18px;
+  }
+
+  h5 {
+      font-size: 14px;
+      line-height: 1.4;
+  }
+
+  /* Buttons centered under image & content */
+  .button-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+  }
+
+  .buttons {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 600px) {
+  nav {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .image {
+      width: 300px;
+      height: 300px;
+  }
+
+  .word {
+      font-size: 25px;
+  }
+
+  h1 {
+      font-size: 28px;
+  }
+
+  h5 {
+      font-size: 20px;
+  }
+
+  /* Buttons remain centered */
+  .button-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+  }
+
+  .buttons {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5px;
+  }
+
+  .button {
+      width: 100px;
+      text-align: center;
+  }
+}
